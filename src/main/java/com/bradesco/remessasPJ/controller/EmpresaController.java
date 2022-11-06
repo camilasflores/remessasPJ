@@ -3,21 +3,31 @@ package com.bradesco.remessasPJ.controller;
 import com.bradesco.remessasPJ.entidade.Empresa;
 import com.bradesco.remessasPJ.service.EmpresaService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/empresa")
-@RequiredArgsConstructor
+@RequestMapping("/empresas")
+
+@Service
 public class EmpresaController {
 
-    private final EmpresaService empresaService;
+    private EmpresaService empresaService;
+
+    public EmpresaController(EmpresaService empresaService) {
+        this.empresaService = empresaService;
+    }
 
     @PostMapping
     public Empresa addEmpresa(@RequestBody Empresa empresa){
-        Empresa empresaCadastrada = empresaService.novaEmpresa(empresa);
-        return empresaCadastrada;
+        return empresaService.novaEmpresa(empresa);
     }
+
+    @GetMapping
+    public List<Empresa> obterTodas(){
+        return empresaService.buscarTodas();
+    }
+
 }

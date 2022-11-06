@@ -5,10 +5,14 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Getter
 @Setter
 @Entity
 public class Carteira {
+
+    @Id
     @Column(name = "COD_CARTEIRA", nullable = false)
     private int codCarteira;
     @Column(name = "DESCRIÇÃO", nullable = false)

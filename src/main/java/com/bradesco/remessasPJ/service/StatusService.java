@@ -6,11 +6,14 @@ import com.bradesco.remessasPJ.repository.RemessaRepository;
 import com.bradesco.remessasPJ.repository.StatusRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StatusService {
     private StatusRepository statusRepository;
 
     public StatusService(StatusRepository statusRepository){
+
         this.statusRepository = statusRepository;
     }
 
@@ -20,4 +23,7 @@ public class StatusService {
         return statusSalvo;
     }
 
+    public List<Status> buscarTodas() {
+        return statusRepository.findAll();
+    }
 }
