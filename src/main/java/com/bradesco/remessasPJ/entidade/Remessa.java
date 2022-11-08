@@ -1,17 +1,21 @@
 package com.bradesco.remessasPJ.entidade;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Getter
 @Setter
 @Entity
 public class Remessa {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idRemessa;
@@ -21,19 +25,9 @@ public class Remessa {
 
     @ManyToOne
     @JoinColumn(name = "Numero_Contrato")
-    private List<Contrato> contratos;
+    private Contrato contrato;
 
     @ManyToOne
     @JoinColumn(name = "Status")
-    private List<Status> status;
-
-    public Remessa() {
-    }
-
-    public Remessa(Integer idRemessa, int sequencial, List<Contrato> contratos, List<Status> status) {
-        this.idRemessa = idRemessa;
-        this.sequencial = sequencial;
-        this.contratos = contratos;
-        this.status = status;
-    }
+    private Status status;
 }
