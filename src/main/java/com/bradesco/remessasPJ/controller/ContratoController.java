@@ -10,8 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/contratos")
-
-@Service
 public class ContratoController {
 
     private ContratoService contratoService;

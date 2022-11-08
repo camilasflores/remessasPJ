@@ -1,5 +1,7 @@
 package com.bradesco.remessasPJ.entidade;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Data
 public class Status {
 
     @Id
@@ -15,28 +18,4 @@ public class Status {
 
     @Column(name = "MOTIVO", nullable = false)
     private String motivo;
-
-    public Status(){
-    }
-
-    public Status(Integer idStatus, String motivo) {
-        this.idStatus = idStatus;
-        this.motivo = motivo;
-    }
-
-    public Integer getIdStatus() {
-        return idStatus;
-    }
-
-    public void setIdStatus(Integer idStatus) {
-        this.idStatus = idStatus;
-    }
-
-    public String getMotivo() {
-        return motivo;
-    }
-
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
-    }
 }

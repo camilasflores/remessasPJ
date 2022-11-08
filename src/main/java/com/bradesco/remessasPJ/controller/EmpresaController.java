@@ -10,8 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/empresas")
-
-@Service
 public class EmpresaController {
 
     private EmpresaService empresaService;

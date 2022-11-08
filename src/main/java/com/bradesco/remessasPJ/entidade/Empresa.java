@@ -1,41 +1,23 @@
 package com.bradesco.remessasPJ.entidade;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+@Getter
+@Setter
 public class Empresa {
+
     @Column(name = "RAZAO_SOCIAL", nullable = false)
     private String razaoSocial;
 
     @Id
     @Column(name = "CPF_CNPJ", nullable = false, unique = true)
     private String CPF_CNPJ;
-
-    public Empresa() {
-    }
-
-    public Empresa(String razaoSocial, String CPF_CNPJ) {
-        this.razaoSocial = razaoSocial;
-        this.CPF_CNPJ = CPF_CNPJ;
-    }
-
-    public String getRazaoSocial() {
-        return razaoSocial;
-    }
-
-    public void setRazaoSocial(String razaoSocial) {
-        this.razaoSocial = razaoSocial;
-    }
-
-    public String getCPF_CNPJ() {
-        return CPF_CNPJ;
-    }
-
-    public void setCPF_CNPJ(String CPF_CNPJ) {
-        this.CPF_CNPJ = CPF_CNPJ;
-    }
 
 }
 

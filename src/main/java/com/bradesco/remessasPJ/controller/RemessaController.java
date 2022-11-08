@@ -9,8 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/remessas")
-
-@Service
 public class RemessaController {
 
     private RemessaService remessaService;

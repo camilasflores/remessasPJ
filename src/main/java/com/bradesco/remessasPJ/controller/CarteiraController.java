@@ -9,8 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/carteiras")
-
-@Service
 public class CarteiraController {
 
     private CarteiraService carteiraService;

@@ -13,8 +13,9 @@ import javax.persistence.Id;
 public class Carteira {
 
     @Id
-    @Column(name = "COD_CARTEIRA", nullable = false)
+    @Column(name = "COD_CARTEIRA")
     private int codCarteira;
+
     @Column(name = "DESCRIÇÃO", nullable = false)
     private String descricao;
 

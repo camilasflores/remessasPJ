@@ -9,8 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/status")
-
-@Service
 public class StatusController {
 
     private StatusService statusService;
