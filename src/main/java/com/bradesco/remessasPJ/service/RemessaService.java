@@ -24,4 +24,8 @@ public class RemessaService {
     public List<Remessa> buscarTodas() {
         return remessaRepository.findAll();
     }
+
+    public void deletarRemessa(int id) {
+        remessaRepository.deleteById(id);
+    }
 }

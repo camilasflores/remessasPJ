@@ -26,4 +26,8 @@ public class StatusService {
     public List<Status> buscarTodas() {
         return statusRepository.findAll();
     }
+
+    public void deletarStatus(int id){
+        statusRepository.deleteById(id);
+    }
 }

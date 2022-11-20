@@ -1,7 +1,6 @@
 package com.bradesco.remessasPJ.entidade;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +12,7 @@ import javax.persistence.ManyToOne;
 
 @Getter
 @Setter
+@RequiredArgsConstructor
 @Entity
 public class Remessa {
 
@@ -24,10 +24,10 @@ public class Remessa {
     private int sequencial;
 
     @ManyToOne
-    @JoinColumn(name = "Numero_Contrato")
+    @JoinColumn(name = "Contrato", nullable = false)
     private Contrato contrato;
 
     @ManyToOne
-    @JoinColumn(name = "Status")
+    @JoinColumn(name = "Status", nullable = false)
     private Status status;
 }

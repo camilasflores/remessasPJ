@@ -27,6 +27,9 @@ public class ContratoController {
     public List<Contrato> obterTodos(){
         return contratoService.buscarTodos();
     }
-
+    @DeleteMapping("/{id}")
+    public void removeContrato(@PathVariable int id){
+        contratoService.deletarContrato(id);
+    }
 }
 

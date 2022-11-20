@@ -2,9 +2,11 @@ package com.bradesco.remessasPJ.controller;
 
 import com.bradesco.remessasPJ.entidade.Status;
 import com.bradesco.remessasPJ.service.StatusService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -27,4 +29,8 @@ public class StatusController {
         return statusService.buscarTodas();
     }
 
+    @DeleteMapping("/{id}")
+    public void removeStatus(@PathVariable int id){
+        statusService.deletarStatus(id);
+    }
 }

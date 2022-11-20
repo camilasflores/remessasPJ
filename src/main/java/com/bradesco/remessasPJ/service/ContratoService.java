@@ -21,6 +21,10 @@ public class ContratoService {
         return contratoSalvo;
     }
 
+    public void deletarContrato(int id){
+        contratoRepository.deleteById(id);
+    }
+
     public List<Contrato> buscarTodos() {
         return contratoRepository.findAll();
     }

@@ -25,4 +25,8 @@ public class EmpresaService {
         return empresaRepository.findAll();
     }
 
+    public void deletarEmpresa(String cpfCnpj){
+        empresaRepository.deleteById(cpfCnpj);
+    }
+
 }

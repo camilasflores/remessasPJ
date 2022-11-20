@@ -18,7 +18,7 @@ public class CarteiraController {
     }
 
     @PostMapping
-    public Carteira addRemessa(@RequestBody Carteira carteira){
+    public Carteira addCarteira(@RequestBody Carteira carteira){
         return carteiraService.novaCarteira(carteira);
     }
 
@@ -27,4 +27,8 @@ public class CarteiraController {
         return carteiraService.buscarTodas();
     }
 
+    @DeleteMapping("/{id}")
+    public void removeCarteira(@PathVariable int id){
+        carteiraService.deletarCarteira(id);
+    }
 }

@@ -1,16 +1,16 @@
 package com.bradesco.remessasPJ.entidade;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Contrato {
 
@@ -19,15 +19,18 @@ public class Contrato {
     private int acessorioEscritural;
 
     @ManyToOne
-    @JoinColumn(name = "cod_carteira")
+    @JoinColumn(name = "Carteira", nullable = false)
     private Carteira carteira;
 
-    @JoinColumn(name = "CPF_CNPJ")
-    private String cpfOuCnpj;
+    @ManyToOne
+    @JoinColumn(name = "CPF_CNPJ", nullable = false)
+    private Empresa empresa;
 
     @Column(name = "AGENCIA", nullable = false)
     private int agencia;
 
-    @Column(name = "CONTA", nullable = false)
+    @Column(name = "CONTA", nullable = false, unique = true)
     private int conta;
+
+
 }

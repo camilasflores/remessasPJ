@@ -28,4 +28,8 @@ public class EmpresaController {
         return empresaService.buscarTodas();
     }
 
+    @DeleteMapping("/{cpfCnpj}")
+    public void removeempresa(@PathVariable String cpfCnpj){
+        empresaService.deletarEmpresa(cpfCnpj);
+    }
 }

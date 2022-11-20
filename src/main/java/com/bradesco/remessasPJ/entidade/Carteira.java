@@ -1,14 +1,16 @@
 package com.bradesco.remessasPJ.entidade;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Getter
 @Setter
+@RequiredArgsConstructor
 @Entity
 public class Carteira {
 
@@ -19,11 +21,4 @@ public class Carteira {
     @Column(name = "DESCRIÇÃO", nullable = false)
     private String descricao;
 
-    public Carteira() {
-    }
-
-    public Carteira(int codCarteira, String descricao) {
-        this.codCarteira = codCarteira;
-        this.descricao = descricao;
-    }
 }

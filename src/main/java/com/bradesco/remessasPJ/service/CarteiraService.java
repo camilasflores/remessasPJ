@@ -25,4 +25,8 @@ public class CarteiraService {
     public List<Carteira> buscarTodas() {
         return carteiraRepository.findAll();
     }
+
+    public void deletarCarteira(int id) {
+        carteiraRepository.deleteById(id);
+    }
 }

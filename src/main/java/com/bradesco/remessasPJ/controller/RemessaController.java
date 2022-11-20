@@ -26,5 +26,8 @@ public class RemessaController {
     public List<Remessa> obterTodas(){
         return remessaService.buscarTodas();
     }
-
+    @DeleteMapping("/{id}")
+    public void removeRemessa(@PathVariable int id){
+        remessaService.deletarRemessa(id);
+    }
 }
