@@ -1,6 +1,7 @@
 package com.bradesco.remessasPJ.controller;
 
 import com.bradesco.remessasPJ.entidade.Carteira;
+import com.bradesco.remessasPJ.entidade.Status;
 import com.bradesco.remessasPJ.service.CarteiraService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +31,10 @@ public class CarteiraController {
     @DeleteMapping("/{id}")
     public void removeCarteira(@PathVariable int id){
         carteiraService.deletarCarteira(id);
+    }
+
+    @PutMapping ("/{id}")
+    public Carteira atualizaPorId(@PathVariable int id, @RequestBody Carteira carteira){
+        return carteiraService.alterarCarteira(id, carteira);
     }
 }

@@ -1,6 +1,7 @@
 package com.bradesco.remessasPJ.controller;
 
 
+import com.bradesco.remessasPJ.entidade.Carteira;
 import com.bradesco.remessasPJ.entidade.Contrato;
 import com.bradesco.remessasPJ.service.ContratoService;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,11 @@ public class ContratoController {
     @DeleteMapping("/{id}")
     public void removeContrato(@PathVariable int id){
         contratoService.deletarContrato(id);
+    }
+
+    @PutMapping ("/{id}")
+    public Contrato atualizaPorId(@PathVariable int id, @RequestBody Contrato contrato){
+        return contratoService.alterarContrato(id, contrato);
     }
 }
 

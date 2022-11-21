@@ -1,5 +1,6 @@
 package com.bradesco.remessasPJ.controller;
 
+import com.bradesco.remessasPJ.entidade.Empresa;
 import com.bradesco.remessasPJ.entidade.Remessa;
 import com.bradesco.remessasPJ.service.RemessaService;
 import org.springframework.stereotype.Service;
@@ -29,5 +30,10 @@ public class RemessaController {
     @DeleteMapping("/{id}")
     public void removeRemessa(@PathVariable int id){
         remessaService.deletarRemessa(id);
+    }
+
+    @PutMapping ("/{id}")
+    public Remessa atualizaPorId(@PathVariable int id, @RequestBody Remessa remessa){
+        return remessaService.alterarRemessa(id, remessa);
     }
 }

@@ -1,5 +1,6 @@
 package com.bradesco.remessasPJ.controller;
 
+import com.bradesco.remessasPJ.entidade.Contrato;
 import com.bradesco.remessasPJ.entidade.Empresa;
 import com.bradesco.remessasPJ.service.EmpresaService;
 import lombok.RequiredArgsConstructor;
@@ -31,5 +32,10 @@ public class EmpresaController {
     @DeleteMapping("/{cpfCnpj}")
     public void removeempresa(@PathVariable String cpfCnpj){
         empresaService.deletarEmpresa(cpfCnpj);
+    }
+
+    @PutMapping ("/{id}")
+    public Empresa atualizaPorId(@PathVariable String id, @RequestBody Empresa empresa){
+        return empresaService.alterarEmpresa(id, empresa);
     }
 }

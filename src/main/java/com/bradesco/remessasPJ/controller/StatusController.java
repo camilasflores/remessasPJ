@@ -33,4 +33,9 @@ public class StatusController {
     public void removeStatus(@PathVariable int id){
         statusService.deletarStatus(id);
     }
+
+    @PutMapping ("/{id}")
+    public Status atualizaPorId(@PathVariable int id, @RequestBody Status status){
+        return statusService.alterarStatus(id, status);
+    }
 }
