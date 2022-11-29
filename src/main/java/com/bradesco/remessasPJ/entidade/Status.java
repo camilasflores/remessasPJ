@@ -14,10 +14,24 @@ import javax.persistence.Id;
 @Entity
 public class Status {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idStatus;
 
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    @Column (name = "NUMERO", nullable = false)
+    private int numero;
+
     @Column(name = "MOTIVO", nullable = false, unique = true)
     private String motivo;
+
+
 }

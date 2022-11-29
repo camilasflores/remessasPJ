@@ -20,14 +20,18 @@ public class Remessa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idRemessa;
 
-    @Column(name = "SEQUENCIAL", nullable = false)
-    private int sequencial;
+    @Column(name = "SEQUENCIAL")
+    private String sequencial;
 
     @ManyToOne
     @JoinColumn(name = "Contrato", nullable = false)
     private Contrato contrato;
 
     @ManyToOne
-    @JoinColumn(name = "Status", nullable = false)
     private Status status;
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
 }
